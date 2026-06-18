@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rehan Shaikh | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:linear-gradient(135deg,#0f172a,#1e293b,#020617);
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:'';
+position:fixed;
+width:400px;
+height:400px;
+background:#38bdf840;
+border-radius:50%;
+top:-150px;
+right:-100px;
+filter:blur(120px);
+z-index:-1;
+}
+
+body::after{
+content:'';
+position:fixed;
+width:350px;
+height:350px;
+background:#8b5cf640;
+border-radius:50%;
+bottom:-120px;
+left:-120px;
+filter:blur(120px);
+z-index:-1;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+backdrop-filter:blur(15px);
+background:rgba(255,255,255,0.05);
+border-bottom:1px solid rgba(255,255,255,0.1);
+z-index:1000;
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#38bdf8;
+}
+
+section{
+padding:100px 10%;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.hero-content h1{
+font-size:4rem;
+margin-bottom:10px;
+}
+
+.hero-content span{
+background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.hero-content h3{
+font-size:1.6rem;
+font-weight:400;
+margin-bottom:20px;
+}
+
+.hero-content p{
+max-width:700px;
+margin:auto;
+color:#cbd5e1;
+line-height:1.8;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 30px;
+margin:10px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+transition:.4s;
+}
+
+.btn-primary{
+background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+color:white;
+}
+
+.btn-secondary{
+border:2px solid #38bdf8;
+color:#38bdf8;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+}
+
+.title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:50px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:20px;
+padding:30px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.about .card{
+text-align:center;
+line-height:1.8;
+}
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.skill{
+text-align:center;
+font-size:18px;
+font-weight:500;
+}
+
+.skills-grids{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:20px;
+}
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.skills{
+text-align:center;
+font-size:18px;
+font-weight:500;
+}
+
+.project h3{
+margin-bottom:10px;
+}
+
+.project p{
+color:#cbd5e1;
+}
+
+.education-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.contact-box{
+text-align:center;
+}
+
+.contact-box p{
+margin:25px 0;
+font-size:18px;
+}
+
+footer{
+padding:30px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+color:#94a3b8;
+}
+
+.reveal{
+opacity:0;
+transform:translateY(50px);
+transition:1s;
+}
+
+.reveal.active{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+nav a{
+margin:5px 10px;
+}
+
+.hero-content h1{
+font-size:2.7rem;
+}
+
+.hero-content h3{
+font-size:1.2rem;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">Portfolio</div>
+
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#education">Education</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Hi, I'm <span>Rehan Shaikh</span></h1>
+
+<h3 id="typing"></h3>
+
+<p>
+BSc IT Student passionate about Web Development,
+Python Programming, SQL and Data Analytics.
+I enjoy building websites and solving real-world problems through technology.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn btn-primary">View Projects</a>
+<a href="#" class="btn btn-secondary">Download Resume</a>
+</div>
+
+</div>
+</section>
+
+<section id="about" class="about reveal">
+
+<h2 class="title">About Me</h2>
+
+<div class="card">
+<p>
+Motivated and enthusiastic B.Sc. IT student passionate about learning and growing in the fields of Web Development and Data Science & Analytics. Seeking an internship opportunity to apply my technical knowledge, enhance my skills, and contribute to real-world projects.
+</p>
+</div>
+
+</section>
+
+<section id="skills" class="reveal">
+
+<h2 class="title">Technical Skills</h2>
+
+<div class="skills-grid">
+
+<div class="card skill">HTML</div>
+<div class="card skill">CSS</div>
+<div class="card skill">JavaScript</div>
+<div class="card skill">Python</div>
+<div class="card skill">C++</div>
+<div class="card skill">SQL</div>
+<div class="card skill">Excel</div>
+
+</div>
+
+</section>
+
+<section id="skills" class="reveal">
+
+<h2 class="title">Soft Skills</h2>
+
+<div class="skills-grids">
+
+<div class="card skill">Decision Making</div>
+<div class="card skill">Problem Solving</div>
+<div class="card skill">Time Managment</div>
+<div class="card skill">Creative Thinking </div>
+<div class="card skill">Quick Learner </div>
+<div class="card skill">Confidence</div>
+<div class="card skill">Clear Communication </div>
+<div class="card skill">Team Work</div>
+<div class="card skill">Communication and Presentation</div>
+
+</div>
+
+</section>
+
+<section id="projects" class="reveal">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects-grid">
+
+<div class="card project">
+<h3>PowerHub Gym Website</h3>
+<p>
+Smooth and Responsive website using HTML, CSS and JavaScript.
+</p>
+
+<br>
+
+<a href="https://soulboi26.github.io/website/"
+target="_blank"
+style="color:#38bdf8;text-decoration:none;font-weight:600;">
+View Project →
+</a>
+
+
+</div>
+
+<div class="card project">
+<h3>Personal Portfolio Website</h3>
+<p>
+Modern responsive portfolio built using HTML, CSS and JavaScript.
+</p>
+</div>
+
+<div class="card project">
+<h3>Documentation Website</h3>
+<p>
+Simple Documentation Website built using HTML, CSS ,JavaScript ,Php and SQL.
+</p>
+
+<br>
+
+<a href="https://your-project-link.com"
+target="_blank"
+style="color:#38bdf8;text-decoration:none;font-weight:600;">
+View Project →
+</a>
+
+</div>
+
+<div class="card project">
+<h3>ResumeIQ – AI Resume Analyzer</h3>
+<p>
+• Built an ATS Resume Analyzer using Python and Streamlit <br>
+• Implemented resume parsing from PDF files <br>
+• Performed skill matching against job descriptions <br>
+• Generated ATS score and skill gap recommendations <br>
+• Added PDF report generation and interactive dashboard <br>
+</p>
+
+<br>
+
+<a href="https://resumeiq-gyftvskrmqndku5fmhauyc.streamlit.app?utm_source=chatgpt.com"
+target="_blank"
+style="color:#38bdf8;text-decoration:none;font-weight:600;">
+View Project →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="education" class="reveal">
+
+<h2 class="title">Education</h2>
+
+<div class="education-grid">
+
+<div class="card">
+<h3>BSc IT</h3>
+<p>Somaiya University</p>
+<p>2025 - 2028</p>
+</div>
+
+<div class="card">
+<h3>HSC</h3>
+<p>HSC (Commerce) College Bunts Sangha Junior, Scored:78%.</p>
+</div>
+
+<div class="card">
+<h3>SSC</h3>
+<p>SSC S.K.P. High School, Scored:62%.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact" class="reveal">
+
+<h2 class="title">Contact Me</h2>
+
+<div class="card contact-box">
+
+<p><a href="mailto:rehanshaikh2402008@gmail.com" style="color:white;text-decoration:none;">📧 rehanshaikh2402008@gmail.com </a></p>
+
+<p><a href="tel:+918097931086" style="color:white;text-decoration:none;">📱 +91 80979 31086 </a></p>
+
+<p>📍 Mumbai,Maharashtra, India</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Rehan Shaikh | All Rights Reserved
+</footer>
+
+<script>
+
+const texts = [
+"Web Developer",
+"Python Programmer",
+"SQL Enthusiast",
+"BSc IT Student"
+];
+
+let count = 0;
+let index = 0;
+let currentText = '';
+let letter = '';
+
+(function type(){
+
+if(count === texts.length){
+count = 0;
+}
+
+currentText = texts[count];
+letter = currentText.slice(0, ++index);
+
+document.getElementById('typing').textContent = letter;
+
+if(letter.length === currentText.length){
+
+setTimeout(()=>{
+index = 0;
+count++;
+type();
+},1500);
+
+}else{
+setTimeout(type,100);
+}
+
+})();
+
+window.addEventListener('scroll',()=>{
+
+document.querySelectorAll('.reveal').forEach(el=>{
+
+let windowHeight = window.innerHeight;
+let top = el.getBoundingClientRect().top;
+
+if(top < windowHeight - 100){
+el.classList.add('active');
+}
+
+});
+
+});
+
+</script>
+
+</body>
+</html>
